@@ -1,0 +1,371 @@
+Program.Sub.ScreenSU.Start
+
+Gui.fMain..Create
+Gui.fMain..Caption("Code Maintenance")
+Gui.fMain..Size(3120,3255)
+Gui.fMain..Position(0,0)
+Gui.fMain..AlwaysOnTop(False)
+Gui.fMain..FontName("Arial")
+Gui.fMain..FontSize(8)
+Gui.fMain..ForeColor(0)
+Gui.fMain..Backcolor(-2147483633)
+Gui.fMain..ControlBox(True)
+Gui.fMain..MaxButton(False)
+Gui.fMain..MinButton(False)
+Gui.fMain..MousePointer(0)
+Gui.fMain..Moveable(True)
+Gui.fMain..Sizeable(False)
+Gui.fMain..ShowInTaskBar(True)
+Gui.fMain..TitleBar(True)
+
+Gui.fMain..Event(unload,fmain_unload)
+
+Gui.fMain.cboCode.Create(dropdownlist)
+Gui.fMain.cboCode.Visible(True)
+Gui.fMain.cboCode.Size(2500,330)
+Gui.fMain.cboCode.Zorder(0)
+Gui.fMain.cboCode.Position(200,700)
+Gui.fMain.cboCode.Enabled(True)
+Gui.fMain.cboCode.FontName("Arial")
+Gui.fMain.cboCode.FontSize(8)
+Gui.fMain.cboCode.TabStop(True)
+Gui.fMain.cboCode.TabIndex(0)
+Gui.fMain.cboCode.Tooltip("")
+Gui.fMain.cboCode.ControlGroup(0)
+Gui.fMain.cboCode.DefaultValue("")
+
+Gui.fMain.cboCode.Event(click,cbocode_click)
+
+Gui.fMain.lblSelectCode.Create(label)
+Gui.fMain.lblSelectCode.Caption("Select a code")
+Gui.fMain.lblSelectCode.Visible(True)
+Gui.fMain.lblSelectCode.Size(1935,255)
+Gui.fMain.lblSelectCode.Zorder(1)
+Gui.fMain.lblSelectCode.Position(200,400)
+Gui.fMain.lblSelectCode.Enabled(True)
+Gui.fMain.lblSelectCode.Alignment(0)
+Gui.fMain.lblSelectCode.FontName("Arial")
+Gui.fMain.lblSelectCode.FontSize(8)
+Gui.fMain.lblSelectCode.Backcolor(-2147483633)
+Gui.fMain.lblSelectCode.BackStyle(0)
+Gui.fMain.lblSelectCode.Tooltip("")
+Gui.fMain.lblSelectCode.ControlGroup(0)
+
+
+Gui.fMain.lblDesc.Create(label)
+Gui.fMain.lblDesc.Caption("Description")
+Gui.fMain.lblDesc.Visible(True)
+Gui.fMain.lblDesc.Size(1410,255)
+Gui.fMain.lblDesc.Zorder(1)
+Gui.fMain.lblDesc.Position(1200,1200)
+Gui.fMain.lblDesc.Enabled(True)
+Gui.fMain.lblDesc.Alignment(0)
+Gui.fMain.lblDesc.FontName("Arial")
+Gui.fMain.lblDesc.FontSize(8)
+Gui.fMain.lblDesc.Backcolor(-2147483633)
+Gui.fMain.lblDesc.BackStyle(0)
+Gui.fMain.lblDesc.Tooltip("")
+Gui.fMain.lblDesc.ControlGroup(0)
+
+
+Gui.fMain.lblCode.Create(label)
+Gui.fMain.lblCode.Caption("Code")
+Gui.fMain.lblCode.Visible(True)
+Gui.fMain.lblCode.Size(735,255)
+Gui.fMain.lblCode.Zorder(1)
+Gui.fMain.lblCode.Position(200,1200)
+Gui.fMain.lblCode.Enabled(True)
+Gui.fMain.lblCode.Alignment(0)
+Gui.fMain.lblCode.FontName("Arial")
+Gui.fMain.lblCode.FontSize(8)
+Gui.fMain.lblCode.Backcolor(-2147483633)
+Gui.fMain.lblCode.BackStyle(0)
+Gui.fMain.lblCode.Tooltip("")
+Gui.fMain.lblCode.ControlGroup(0)
+
+
+Gui.fMain.txtDesc.Create(textbox)
+Gui.fMain.txtDesc.Text("")
+Gui.fMain.txtDesc.Visible(True)
+Gui.fMain.txtDesc.Size(1500,300)
+Gui.fMain.txtDesc.Zorder(0)
+Gui.fMain.txtDesc.Position(1200,1500)
+Gui.fMain.txtDesc.Enabled(True)
+Gui.fMain.txtDesc.Alignment(0)
+Gui.fMain.txtDesc.FontName("Arial")
+Gui.fMain.txtDesc.FontSize(8)
+Gui.fMain.txtDesc.Backcolor(-2147483643)
+Gui.fMain.txtDesc.BorderStyle(1)
+Gui.fMain.txtDesc.TabStop(True)
+Gui.fMain.txtDesc.TabIndex(2)
+Gui.fMain.txtDesc.Tooltip("")
+Gui.fMain.txtDesc.ControlGroup(0)
+Gui.fMain.txtDesc.DefaultValue("")
+
+Gui.fMain.txtDesc.Event(lostfocus,txtDesc_lostfocus)
+Gui.fMain.txtDesc.Event(keypressenter,txt_keypressenter)
+
+Gui.fMain.txtCode.Create(textbox)
+Gui.fMain.txtCode.Text("")
+Gui.fMain.txtCode.Visible(True)
+Gui.fMain.txtCode.Size(855,300)
+Gui.fMain.txtCode.Zorder(0)
+Gui.fMain.txtCode.Position(200,1500)
+Gui.fMain.txtCode.Enabled(True)
+Gui.fMain.txtCode.Alignment(0)
+Gui.fMain.txtCode.FontName("Arial")
+Gui.fMain.txtCode.FontSize(8)
+Gui.fMain.txtCode.Backcolor(-2147483643)
+Gui.fMain.txtCode.BorderStyle(1)
+Gui.fMain.txtCode.TabStop(True)
+Gui.fMain.txtCode.TabIndex(1)
+Gui.fMain.txtCode.Tooltip("")
+Gui.fMain.txtCode.ControlGroup(0)
+Gui.fMain.txtCode.DefaultValue("")
+
+Gui.fMain.txtCode.Event(lostfocus,txtCode_lostfocus)
+Gui.fMain.txtCode.Event(keypressenter,txt_keypressenter)
+
+Gui.fMain.cmdSave.Create(button)
+Gui.fMain.cmdSave.Caption("Save")
+Gui.fMain.cmdSave.Visible(True)
+Gui.fMain.cmdSave.Size(855,375)
+Gui.fMain.cmdSave.Zorder(0)
+Gui.fMain.cmdSave.Position(200,2100)
+Gui.fMain.cmdSave.Enabled(True)
+Gui.fMain.cmdSave.FontName("Arial")
+Gui.fMain.cmdSave.FontSize(8)
+Gui.fMain.cmdSave.TabStop(True)
+Gui.fMain.cmdSave.TabIndex(3)
+Gui.fMain.cmdSave.Tooltip("")
+Gui.fMain.cmdSave.ControlGroup(0)
+Gui.fMain.cmdSave.DefaultValue("")
+
+Gui.fMain.cmdSave.Event(click,cmdsave_click)
+
+Gui.fMain.cmdDelete.Create(button)
+Gui.fMain.cmdDelete.Caption("Delete")
+Gui.fMain.cmdDelete.Visible(True)
+Gui.fMain.cmdDelete.Size(855,375)
+Gui.fMain.cmdDelete.Zorder(0)
+Gui.fMain.cmdDelete.Position(1200,2105)
+Gui.fMain.cmdDelete.Enabled(True)
+Gui.fMain.cmdDelete.FontName("Arial")
+Gui.fMain.cmdDelete.FontSize(8)
+Gui.fMain.cmdDelete.TabStop(True)
+Gui.fMain.cmdDelete.TabIndex(4)
+Gui.fMain.cmdDelete.Tooltip("")
+Gui.fMain.cmdDelete.ControlGroup(0)
+Gui.fMain.cmdDelete.DefaultValue("")
+
+Gui.fMain.cmdDelete.Event(click,cmddelete_click)
+
+gui.fMain..minx(0)
+gui.fMain..miny(0)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Variable.UDT.uCodes.Define("Code_ID",Long,Code_ID)
+Variable.UDT.uCodes.Define("Category",String,Category)
+Variable.UDT.uCodes.Define("Description",String,Description)
+Variable.uGlobal.uCodes.Declare("uCodes")
+Variable.Global.iIDEditing.Declare(Long,-1)
+Variable.Global.bDirty.Declare(Boolean,False)
+Variable.Global.sCode.Declare(String)
+Variable.Global.sDesc.Declare(String)
+
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+
+Function.Intrinsic.Control.CallSub(setupdatabaseconnection)
+Function.Intrinsic.Control.CallSub(loadcodes)
+Function.Intrinsic.Control.CallSub(setdirty,"bIsDirty",False)
+
+gui.fMain..Show
+
+Program.Sub.Main.End
+
+program.sub.cbocode_click.start
+
+v.Local.sCodeSel.Declare(String)
+v.Local.sRet.Declare(String)
+v.Local.iRet.Declare(Long)
+
+Function.Intrinsic.Control.If(v.Screen.fMain!cboCode.Text,=,"[New Code]")
+	gui.fMain.txtCode.Text("")
+	gui.fMain.txtDesc.Text("")
+
+	v.Global.sCode.Set("")
+	v.Global.sDesc.Set("")
+
+	v.Global.iIDEditing.Set(-1)
+Function.Intrinsic.Control.Else
+	Function.Intrinsic.String.Split(v.Screen.fMain!cboCode.Text," - ",v.Local.sCodeSel)
+	v.Local.sCodeSel.Set(v.Local.sCodeSel(0))
+	Function.Intrinsic.String.RPad(v.Local.sCodeSel," ",4,v.Local.sCodeSel)
+
+	Function.Intrinsic.Variable.UDTSeek(v.uGlobal.uCodes!Category,v.Local.sCodeSel,4,v.Local.iRet)
+	Function.Intrinsic.Variable.UDTPositionToString(v.uGlobal.uCodes,"Code_ID*!*Category*!*Description",v.Local.iRet,"*!*",v.Local.sRet)
+
+	Function.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+
+	v.Global.iIDEditing.Set(v.Local.sRet(0))
+	gui.fMain.txtCode.Text(v.Local.sRet(1))
+	gui.fMain.txtDesc.Text(v.Local.sRet(2))
+
+	v.Global.sCode.Set(v.Local.sRet(1))
+	v.Global.sDesc.Set(v.Local.sRet(2))
+Function.Intrinsic.Control.EndIf
+
+Function.Intrinsic.Control.CallSub(setdirty,"bIsDirty",False)
+
+program.sub.cbocode_click.end
+
+program.sub.txtDesc_lostfocus.start
+	v.Local.sDesc.Declare(String)
+
+	v.Local.sDesc.Set(v.Screen.fMain!txtDesc.Text)
+	Function.Intrinsic.String.Left(v.Local.sDesc,30,v.Local.sDesc)
+
+	gui.fMain.txtDesc.Text(v.Local.sDesc)
+
+	Function.Intrinsic.Control.If(v.Global.sDesc,<>,v.Local.sDesc)
+		Function.Intrinsic.Control.CallSub(setdirty,"bIsDirty",True)
+	Function.Intrinsic.Control.EndIf
+
+program.sub.txtDesc_lostfocus.end
+
+program.sub.txtCode_lostfocus.start
+
+	v.Local.sCode.Declare(String)
+
+	v.Local.sCode.Set(v.Screen.fMain!txtCode.Text)
+	Function.Intrinsic.String.StripCharacters(v.Local.sCode,v.Local.sCode)
+	Function.Intrinsic.String.Left(v.Local.sCode,4,v.Local.sCode)
+	Function.Intrinsic.String.UCase(v.Local.sCode,v.Local.sCode)
+
+	gui.fMain.txtCode.Text(v.Local.sCode)
+
+	Function.Intrinsic.Control.If(v.Global.sCode,<>,v.Local.sCode)
+		Function.Intrinsic.Control.CallSub(setdirty,"bIsDirty",True)
+	Function.Intrinsic.Control.EndIf
+
+program.sub.txtCode_lostfocus.end
+
+program.sub.txt_keypressenter.start
+
+Function.Intrinsic.Control.If(v.Global.bDirty)
+	Function.Intrinsic.Control.CallSub(cmdsave_click)
+Function.Intrinsic.Control.EndIf
+
+program.sub.txt_keypressenter.end
+
+program.sub.cmdsave_click.start
+
+v.Local.sQuery.Declare(String)
+v.Local.sCode.Declare(String)
+v.Local.sDesc.Declare(String)
+
+v.Local.sCode.Set(v.Screen.fMain!txtCode.Text)
+v.Local.sDesc.Set(v.Screen.fMain!txtDesc.Text)
+f.Intrinsic.String.Replace(v.Local.sDesc,"'","''",v.Local.sDesc)
+
+
+Function.Intrinsic.Control.If(v.Global.iIDEditing,=,-1)
+	Function.Intrinsic.String.Concat("Insert into ATG_3627_DT_Codes values(0,'",v.Local.sCode,"','",v.Local.sDesc,"')",v.Local.sQuery)
+	f.ODBC.Connection!Conx.Execute(v.Local.sQuery)
+Function.Intrinsic.Control.Else
+	Function.Intrinsic.String.Concat("Update ATG_3627_DT_Codes set Category='",v.Local.sCode,"', Description='",v.Local.sDesc,"' where Code_ID=",v.Global.iIDEditing,v.Local.sQuery)
+	f.ODBC.Connection!Conx.Execute(v.Local.sQuery)
+Function.Intrinsic.Control.EndIf
+
+Function.Intrinsic.Control.CallSub(loadcodes)
+Function.Intrinsic.Control.CallSub(setdirty,"bIsDirty",False)
+
+program.sub.cmdsave_click.end
+
+program.sub.cmddelete_click.start
+v.Local.sQuery.Declare(String)
+
+Function.Intrinsic.Control.If(v.Global.iIDEditing,>,0)
+	Function.Intrinsic.String.Concat("Delete from ATG_3627_DT_Codes where Code_ID=",v.Global.iIDEditing,v.Local.sQuery)
+	f.ODBC.Connection!Conx.Execute(v.Local.sQuery)
+Function.Intrinsic.Control.EndIf
+
+Function.Intrinsic.Control.CallSub(loadcodes)
+Function.Intrinsic.Control.CallSub(setdirty,"bIsDirty",False)
+program.sub.cmddelete_click.end
+
+Program.Sub.LoadCodes.Start
+
+	v.Local.sUDTLines.Declare(String)
+	v.Local.sUDTTokens.Declare(String)
+	v.Local.sSelection.Declare(String)
+	v.Local.i.Declare(Long)
+	v.Local.iUB.Declare(Long)
+
+	gui.fMain.cboCode.ClearItems
+	Function.Intrinsic.Variable.UDTFlagAll(v.uGlobal.uCodes)
+	Function.Intrinsic.Variable.UDTDeleteFlagged(v.uGlobal.uCodes)
+
+	' Load all the records from the database
+	f.ODBC.Connection!Conx.OpenLocalRecordsetRW("rstCodes","Select * from ATG_3627_DT_Codes order by Category")
+
+	F.Intrinsic.Control.If(V.ODBC.conX!rstCodes.EOF,=,False)
+
+		f.Intrinsic.Variable.LoadUDTFromRecordset("Conx","rstCodes","v.uGlobal.uCodes",False)
+
+		f.Intrinsic.Variable.UDTToString(v.uGlobal.uCodes,"Category*!*Description*!*Code_ID","!*!","*!*",v.Local.sUDTLines)
+		Function.Intrinsic.String.Split(v.Local.sUDTLines,"!*!",v.Local.sUDTLines)
+		v.Local.iUB.Set(v.Local.sUDTLines.UBound)
+
+		f.Intrinsic.Control.For(v.Local.i,0,v.Local.iUB,1)
+			Function.Intrinsic.String.Split(v.Local.sUDTLines(v.Local.i),"*!*",v.Local.sUDTTokens)
+
+			Function.Intrinsic.String.Concat(v.Local.sUDTTokens(0)," - ",v.Local.sUDTTokens(1),v.Local.sSelection)
+
+			gui.fMain.cboCode.AddItem(v.Local.sSelection)
+
+		f.Intrinsic.Control.Next(v.Local.i)
+
+	Function.Intrinsic.Control.EndIf
+
+	f.ODBC.Conx!rstCodes.Close
+
+	gui.fMain.cboCode.AddItem("[New Code]")
+	gui.fMain.cboCode.Text("[New Code]")
+
+Program.Sub.LoadCodes.End
+
+Program.Sub.SetupDatabaseConnection.Start
+	f.ODBC.Connection!Conx.OpenConnection(v.Ambient.PDSN,v.Ambient.PUser,v.Ambient.PPass)
+Program.Sub.SetupDatabaseConnection.End
+
+Program.Sub.SetDirty.Start
+	v.Global.bDirty.Set(v.Args.bIsDirty)
+
+	Function.Intrinsic.Control.If(v.Args.bIsDirty)
+		gui.fMain.cmdSave.Enabled(True)
+	Function.Intrinsic.Control.Else
+		gui.fMain.cmdSave.Enabled(False)
+	Function.Intrinsic.Control.EndIf
+
+	Function.Intrinsic.Control.If(v.Global.iIDEditing,=,-1)
+		gui.fMain.cmdDelete.Visible(False)
+	Function.Intrinsic.Control.Else
+		gui.fMain.cmdDelete.Visible(True)
+	Function.Intrinsic.Control.EndIf
+Program.Sub.SetDirty.End
+
+program.sub.fmain_unload.start
+Function.Intrinsic.Control.End
+program.sub.fmain_unload.end
+
+Program.Sub.Comments.Start
+${$0$}$ATG_3627_DT_Codes$}$JWD$}$2/18/2016$}$False
+Program.Sub.Comments.End
+
+
+
+ 

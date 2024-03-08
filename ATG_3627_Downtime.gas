@@ -1,0 +1,1371 @@
+Program.Sub.ScreenSU.Start
+
+Gui.fMain..Create
+Gui.fMain..Caption("Machine Downtime")
+Gui.fMain..Size(9600,5970)
+Gui.fMain..Position(0,0)
+Gui.fMain..AlwaysOnTop(False)
+Gui.fMain..FontName("Arial")
+Gui.fMain..FontSize(8)
+Gui.fMain..ForeColor(0)
+Gui.fMain..Backcolor(-2147483633)
+Gui.fMain..ControlBox(True)
+Gui.fMain..MaxButton(True)
+Gui.fMain..MinButton(True)
+Gui.fMain..MousePointer(0)
+Gui.fMain..Moveable(True)
+Gui.fMain..Sizeable(True)
+Gui.fMain..ShowInTaskBar(True)
+Gui.fMain..TitleBar(True)
+
+Gui.fMain..Event(unload,fMain_Unload)
+
+Gui.fMain.pnlEnterPart.Create(frame)
+Gui.fMain.pnlEnterPart.Caption("Frame")
+Gui.fMain.pnlEnterPart.Visible(False)
+Gui.fMain.pnlEnterPart.Size(10000,720)
+Gui.fMain.pnlEnterPart.Zorder(0)
+Gui.fMain.pnlEnterPart.Position(0,0)
+Gui.fMain.pnlEnterPart.Enabled(True)
+Gui.fMain.pnlEnterPart.BorderStyle(0)
+Gui.fMain.pnlEnterPart.FontName("Arial")
+Gui.fMain.pnlEnterPart.FontSize(8)
+Gui.fMain.pnlEnterPart.Tooltip("")
+
+
+Gui.fMain.pnlShowPart.Create(frame)
+Gui.fMain.pnlShowPart.Caption("Frame")
+Gui.fMain.pnlShowPart.Visible(False)
+Gui.fMain.pnlShowPart.Size(10000,720)
+Gui.fMain.pnlShowPart.Zorder(0)
+Gui.fMain.pnlShowPart.Position(0,0)
+Gui.fMain.pnlShowPart.Enabled(True)
+Gui.fMain.pnlShowPart.BorderStyle(0)
+Gui.fMain.pnlShowPart.FontName("Arial")
+Gui.fMain.pnlShowPart.FontSize(8)
+Gui.fMain.pnlShowPart.Tooltip("")
+
+
+Gui.fMain.lblPartEdit.Create(label)
+Gui.fMain.lblPartEdit.Caption("Job")
+Gui.fMain.lblPartEdit.Visible(True)
+Gui.fMain.lblPartEdit.Size(1335,255)
+Gui.fMain.lblPartEdit.Zorder(1)
+Gui.fMain.lblPartEdit.Position(195,80)
+Gui.fMain.lblPartEdit.Enabled(True)
+Gui.fMain.lblPartEdit.Alignment(0)
+Gui.fMain.lblPartEdit.FontName("Arial")
+Gui.fMain.lblPartEdit.FontSize(8)
+Gui.fMain.lblPartEdit.Backcolor(-2147483633)
+Gui.fMain.lblPartEdit.BackStyle(0)
+Gui.fMain.lblPartEdit.Parent("pnlenterpart")
+Gui.fMain.lblPartEdit.Tooltip("")
+Gui.fMain.lblPartEdit.ControlGroup(0)
+
+
+Gui.fMain.lblSfxEdit.Create(label)
+Gui.fMain.lblSfxEdit.Caption("Suffix")
+Gui.fMain.lblSfxEdit.Visible(True)
+Gui.fMain.lblSfxEdit.Size(600,255)
+Gui.fMain.lblSfxEdit.Zorder(1)
+Gui.fMain.lblSfxEdit.Position(1860,80)
+Gui.fMain.lblSfxEdit.Enabled(True)
+Gui.fMain.lblSfxEdit.Alignment(0)
+Gui.fMain.lblSfxEdit.FontName("Arial")
+Gui.fMain.lblSfxEdit.FontSize(8)
+Gui.fMain.lblSfxEdit.Backcolor(-2147483633)
+Gui.fMain.lblSfxEdit.BackStyle(0)
+Gui.fMain.lblSfxEdit.Parent("pnlenterpart")
+Gui.fMain.lblSfxEdit.Tooltip("")
+Gui.fMain.lblSfxEdit.ControlGroup(0)
+
+
+Gui.fMain.lblSeqEdit.Create(label)
+Gui.fMain.lblSeqEdit.Caption("Seq.")
+Gui.fMain.lblSeqEdit.Visible(True)
+Gui.fMain.lblSeqEdit.Size(465,255)
+Gui.fMain.lblSeqEdit.Zorder(1)
+Gui.fMain.lblSeqEdit.Position(2500,80)
+Gui.fMain.lblSeqEdit.Enabled(True)
+Gui.fMain.lblSeqEdit.Alignment(0)
+Gui.fMain.lblSeqEdit.FontName("Arial")
+Gui.fMain.lblSeqEdit.FontSize(8)
+Gui.fMain.lblSeqEdit.Backcolor(-2147483633)
+Gui.fMain.lblSeqEdit.BackStyle(0)
+Gui.fMain.lblSeqEdit.Parent("pnlenterpart")
+Gui.fMain.lblSeqEdit.Tooltip("")
+Gui.fMain.lblSeqEdit.ControlGroup(0)
+
+
+Gui.fMain.txtJobEdit.Create(textbox)
+Gui.fMain.txtJobEdit.Text("")
+Gui.fMain.txtJobEdit.Visible(True)
+Gui.fMain.txtJobEdit.Size(1395,300)
+Gui.fMain.txtJobEdit.Zorder(0)
+Gui.fMain.txtJobEdit.Position(200,315)
+Gui.fMain.txtJobEdit.Enabled(True)
+Gui.fMain.txtJobEdit.Alignment(0)
+Gui.fMain.txtJobEdit.FontName("Arial")
+Gui.fMain.txtJobEdit.FontSize(8)
+Gui.fMain.txtJobEdit.Backcolor(16777215)
+Gui.fMain.txtJobEdit.BorderStyle(1)
+Gui.fMain.txtJobEdit.Parent("pnlenterpart")
+Gui.fMain.txtJobEdit.TabStop(True)
+Gui.fMain.txtJobEdit.TabIndex(5)
+Gui.fMain.txtJobEdit.Tooltip("")
+Gui.fMain.txtJobEdit.ControlGroup(0)
+Gui.fMain.txtJobEdit.DefaultValue("")
+
+
+Gui.fMain.txtSfxEdit.Create(textbox)
+Gui.fMain.txtSfxEdit.Text("")
+Gui.fMain.txtSfxEdit.Visible(True)
+Gui.fMain.txtSfxEdit.Size(570,300)
+Gui.fMain.txtSfxEdit.Zorder(0)
+Gui.fMain.txtSfxEdit.Position(1830,315)
+Gui.fMain.txtSfxEdit.Enabled(True)
+Gui.fMain.txtSfxEdit.Alignment(0)
+Gui.fMain.txtSfxEdit.FontName("Arial")
+Gui.fMain.txtSfxEdit.FontSize(8)
+Gui.fMain.txtSfxEdit.Backcolor(16777215)
+Gui.fMain.txtSfxEdit.BorderStyle(1)
+Gui.fMain.txtSfxEdit.Parent("pnlenterpart")
+Gui.fMain.txtSfxEdit.TabStop(True)
+Gui.fMain.txtSfxEdit.TabIndex(6)
+Gui.fMain.txtSfxEdit.Tooltip("")
+Gui.fMain.txtSfxEdit.ControlGroup(0)
+Gui.fMain.txtSfxEdit.DefaultValue("")
+
+
+Gui.fMain.lblDash.Create(label)
+Gui.fMain.lblDash.Caption("-")
+Gui.fMain.lblDash.Visible(True)
+Gui.fMain.lblDash.Size(75,255)
+Gui.fMain.lblDash.Zorder(1)
+Gui.fMain.lblDash.Position(1660,400)
+Gui.fMain.lblDash.Enabled(True)
+Gui.fMain.lblDash.Alignment(0)
+Gui.fMain.lblDash.FontName("Arial")
+Gui.fMain.lblDash.FontSize(8)
+Gui.fMain.lblDash.Backcolor(-2147483633)
+Gui.fMain.lblDash.BackStyle(0)
+Gui.fMain.lblDash.Parent("pnlenterpart")
+Gui.fMain.lblDash.Tooltip("")
+Gui.fMain.lblDash.ControlGroup(0)
+
+
+Gui.fMain.txtSeqEdit.Create(textbox)
+Gui.fMain.txtSeqEdit.Text("")
+Gui.fMain.txtSeqEdit.Visible(True)
+Gui.fMain.txtSeqEdit.Size(900,300)
+Gui.fMain.txtSeqEdit.Zorder(0)
+Gui.fMain.txtSeqEdit.Position(2520,315)
+Gui.fMain.txtSeqEdit.Enabled(True)
+Gui.fMain.txtSeqEdit.Alignment(0)
+Gui.fMain.txtSeqEdit.FontName("Arial")
+Gui.fMain.txtSeqEdit.FontSize(8)
+Gui.fMain.txtSeqEdit.Backcolor(16777215)
+Gui.fMain.txtSeqEdit.BorderStyle(1)
+Gui.fMain.txtSeqEdit.Parent("pnlenterpart")
+Gui.fMain.txtSeqEdit.TabStop(True)
+Gui.fMain.txtSeqEdit.TabIndex(8)
+Gui.fMain.txtSeqEdit.Tooltip("")
+Gui.fMain.txtSeqEdit.ControlGroup(0)
+Gui.fMain.txtSeqEdit.DefaultValue("")
+
+
+Gui.fMain.lblCatTitle.Create(label)
+Gui.fMain.lblCatTitle.Caption("Category")
+Gui.fMain.lblCatTitle.Visible(True)
+Gui.fMain.lblCatTitle.Size(1680,255)
+Gui.fMain.lblCatTitle.Zorder(1)
+Gui.fMain.lblCatTitle.Position(195,800)
+Gui.fMain.lblCatTitle.Enabled(True)
+Gui.fMain.lblCatTitle.Alignment(0)
+Gui.fMain.lblCatTitle.FontName("Arial")
+Gui.fMain.lblCatTitle.FontSize(8)
+Gui.fMain.lblCatTitle.Backcolor(-2147483633)
+Gui.fMain.lblCatTitle.BackStyle(0)
+Gui.fMain.lblCatTitle.Tooltip("")
+Gui.fMain.lblCatTitle.ControlGroup(0)
+
+
+Gui.fMain.txtCat.Create(textbox)
+Gui.fMain.txtCat.Text("")
+Gui.fMain.txtCat.Visible(True)
+Gui.fMain.txtCat.Size(1395,300)
+Gui.fMain.txtCat.Zorder(0)
+Gui.fMain.txtCat.Position(200,1105)
+Gui.fMain.txtCat.Enabled(True)
+Gui.fMain.txtCat.Alignment(0)
+Gui.fMain.txtCat.FontName("Arial")
+Gui.fMain.txtCat.FontSize(8)
+Gui.fMain.txtCat.Backcolor(16777215)
+Gui.fMain.txtCat.BorderStyle(1)
+Gui.fMain.txtCat.TabStop(True)
+Gui.fMain.txtCat.TabIndex(10)
+Gui.fMain.txtCat.Tooltip("")
+Gui.fMain.txtCat.ControlGroup(0)
+Gui.fMain.txtCat.DefaultValue("")
+
+
+Gui.fMain.txtShift.Create(textbox)
+Gui.fMain.txtShift.Text("")
+Gui.fMain.txtShift.Visible(True)
+Gui.fMain.txtShift.Size(1395,300)
+Gui.fMain.txtShift.Zorder(0)
+Gui.fMain.txtShift.Position(200,1915)
+Gui.fMain.txtShift.Enabled(True)
+Gui.fMain.txtShift.Alignment(0)
+Gui.fMain.txtShift.FontName("Arial")
+Gui.fMain.txtShift.FontSize(8)
+Gui.fMain.txtShift.Backcolor(16777215)
+Gui.fMain.txtShift.BorderStyle(1)
+Gui.fMain.txtShift.TabStop(True)
+Gui.fMain.txtShift.TabIndex(11)
+Gui.fMain.txtShift.Tooltip("")
+Gui.fMain.txtShift.ControlGroup(0)
+Gui.fMain.txtShift.DefaultValue("")
+
+
+Gui.fMain.lblShiftTitle.Create(label)
+Gui.fMain.lblShiftTitle.Caption("Shift")
+Gui.fMain.lblShiftTitle.Visible(True)
+Gui.fMain.lblShiftTitle.Size(1305,255)
+Gui.fMain.lblShiftTitle.Zorder(1)
+Gui.fMain.lblShiftTitle.Position(195,1595)
+Gui.fMain.lblShiftTitle.Enabled(True)
+Gui.fMain.lblShiftTitle.Alignment(0)
+Gui.fMain.lblShiftTitle.FontName("Arial")
+Gui.fMain.lblShiftTitle.FontSize(8)
+Gui.fMain.lblShiftTitle.Backcolor(-2147483633)
+Gui.fMain.lblShiftTitle.BackStyle(0)
+Gui.fMain.lblShiftTitle.Tooltip("")
+Gui.fMain.lblShiftTitle.ControlGroup(0)
+
+
+Gui.fMain.txtHours.Create(textbox)
+Gui.fMain.txtHours.Text("")
+Gui.fMain.txtHours.Visible(True)
+Gui.fMain.txtHours.Size(1395,300)
+Gui.fMain.txtHours.Zorder(0)
+Gui.fMain.txtHours.Position(1790,1915)
+Gui.fMain.txtHours.Enabled(True)
+Gui.fMain.txtHours.Alignment(0)
+Gui.fMain.txtHours.FontName("Arial")
+Gui.fMain.txtHours.FontSize(8)
+Gui.fMain.txtHours.Backcolor(16777215)
+Gui.fMain.txtHours.BorderStyle(1)
+Gui.fMain.txtHours.TabStop(True)
+Gui.fMain.txtHours.TabIndex(13)
+Gui.fMain.txtHours.Tooltip("")
+Gui.fMain.txtHours.ControlGroup(0)
+Gui.fMain.txtHours.DefaultValue("")
+
+
+Gui.fMain.lblHours.Create(label)
+Gui.fMain.lblHours.Caption("Qty (Hours)")
+Gui.fMain.lblHours.Visible(True)
+Gui.fMain.lblHours.Size(1350,255)
+Gui.fMain.lblHours.Zorder(1)
+Gui.fMain.lblHours.Position(1815,1595)
+Gui.fMain.lblHours.Enabled(True)
+Gui.fMain.lblHours.Alignment(0)
+Gui.fMain.lblHours.FontName("Arial")
+Gui.fMain.lblHours.FontSize(8)
+Gui.fMain.lblHours.Backcolor(-2147483633)
+Gui.fMain.lblHours.BackStyle(0)
+Gui.fMain.lblHours.Tooltip("")
+Gui.fMain.lblHours.ControlGroup(0)
+
+
+Gui.fMain.lblNotesTitle.Create(label)
+Gui.fMain.lblNotesTitle.Caption("Notes")
+Gui.fMain.lblNotesTitle.Visible(True)
+Gui.fMain.lblNotesTitle.Size(1935,255)
+Gui.fMain.lblNotesTitle.Zorder(1)
+Gui.fMain.lblNotesTitle.Position(200,2410)
+Gui.fMain.lblNotesTitle.Enabled(True)
+Gui.fMain.lblNotesTitle.Alignment(0)
+Gui.fMain.lblNotesTitle.FontName("Arial")
+Gui.fMain.lblNotesTitle.FontSize(8)
+Gui.fMain.lblNotesTitle.Backcolor(-2147483633)
+Gui.fMain.lblNotesTitle.BackStyle(0)
+Gui.fMain.lblNotesTitle.Tooltip("")
+Gui.fMain.lblNotesTitle.ControlGroup(0)
+
+
+Gui.fMain.pnlDivider.Create(frame)
+Gui.fMain.pnlDivider.Caption("")
+Gui.fMain.pnlDivider.Visible(True)
+Gui.fMain.pnlDivider.Size(15,3870)
+Gui.fMain.pnlDivider.Zorder(0)
+Gui.fMain.pnlDivider.Position(3320,910)
+Gui.fMain.pnlDivider.Enabled(True)
+Gui.fMain.pnlDivider.BorderStyle(0)
+Gui.fMain.pnlDivider.FontName("Arial")
+Gui.fMain.pnlDivider.FontSize(8)
+Gui.fMain.pnlDivider.Tooltip("")
+
+
+Gui.fMain.gsfgHistory.Create(gsflexgrid)
+Gui.fMain.gsfgHistory.Visible(True)
+Gui.fMain.gsfgHistory.Size(5685,3695)
+Gui.fMain.gsfgHistory.Zorder(0)
+Gui.fMain.gsfgHistory.Position(3490,1095)
+Gui.fMain.gsfgHistory.Enabled(True)
+Gui.fMain.gsfgHistory.FixedRows(0)
+Gui.fMain.gsfgHistory.FixedCols(0)
+
+Gui.fMain.gsfgHistory.Event(commandclick,gsfgHistory_commandclick)
+
+Gui.fMain.lblPrevEntries.Create(label)
+Gui.fMain.lblPrevEntries.Caption("Previous Entries")
+Gui.fMain.lblPrevEntries.Visible(True)
+Gui.fMain.lblPrevEntries.Size(1935,330)
+Gui.fMain.lblPrevEntries.Zorder(1)
+Gui.fMain.lblPrevEntries.Position(3495,800)
+Gui.fMain.lblPrevEntries.Enabled(True)
+Gui.fMain.lblPrevEntries.Alignment(0)
+Gui.fMain.lblPrevEntries.FontName("Arial")
+Gui.fMain.lblPrevEntries.FontSize(8)
+Gui.fMain.lblPrevEntries.Backcolor(-2147483633)
+Gui.fMain.lblPrevEntries.BackStyle(0)
+Gui.fMain.lblPrevEntries.Tooltip("")
+Gui.fMain.lblPrevEntries.ControlGroup(0)
+
+
+Gui.fMain.cmdPickCat.Create(button)
+Gui.fMain.cmdPickCat.Caption("^")
+Gui.fMain.cmdPickCat.Visible(True)
+Gui.fMain.cmdPickCat.Size(345,330)
+Gui.fMain.cmdPickCat.Zorder(0)
+Gui.fMain.cmdPickCat.Position(1605,1090)
+Gui.fMain.cmdPickCat.Enabled(True)
+Gui.fMain.cmdPickCat.FontName("Arial")
+Gui.fMain.cmdPickCat.FontSize(8)
+Gui.fMain.cmdPickCat.TabStop(True)
+Gui.fMain.cmdPickCat.TabIndex(20)
+Gui.fMain.cmdPickCat.Tooltip("")
+Gui.fMain.cmdPickCat.ControlGroup(0)
+Gui.fMain.cmdPickCat.DefaultValue("")
+
+
+Gui.fMain.cmdPrev.Create(button)
+Gui.fMain.cmdPrev.Caption("")
+Gui.fMain.cmdPrev.Visible(True)
+Gui.fMain.cmdPrev.Size(375,375)
+Gui.fMain.cmdPrev.Zorder(0)
+Gui.fMain.cmdPrev.Position(8580,180)
+Gui.fMain.cmdPrev.Enabled(True)
+Gui.fMain.cmdPrev.FontName("Arial")
+Gui.fMain.cmdPrev.FontSize(8)
+Gui.fMain.cmdPrev.Parent("pnlshowpart")
+Gui.fMain.cmdPrev.TabStop(True)
+Gui.fMain.cmdPrev.TabIndex(21)
+Gui.fMain.cmdPrev.Tooltip("")
+Gui.fMain.cmdPrev.ControlGroup(0)
+Gui.fMain.cmdPrev.DefaultValue("")
+
+
+Gui.fMain.cmdNext.Create(button)
+Gui.fMain.cmdNext.Caption("")
+Gui.fMain.cmdNext.Visible(True)
+Gui.fMain.cmdNext.Size(375,375)
+Gui.fMain.cmdNext.Zorder(0)
+Gui.fMain.cmdNext.Position(9045,180)
+Gui.fMain.cmdNext.Enabled(True)
+Gui.fMain.cmdNext.FontName("Arial")
+Gui.fMain.cmdNext.FontSize(8)
+Gui.fMain.cmdNext.Parent("pnlshowpart")
+Gui.fMain.cmdNext.TabStop(True)
+Gui.fMain.cmdNext.TabIndex(22)
+Gui.fMain.cmdNext.Tooltip("")
+Gui.fMain.cmdNext.ControlGroup(0)
+Gui.fMain.cmdNext.DefaultValue("")
+
+
+Gui.fMain.lblTitle.Create(label)
+Gui.fMain.lblTitle.Caption("Part-SFX Seq. 1000")
+Gui.fMain.lblTitle.Visible(True)
+Gui.fMain.lblTitle.Size(9240,300)
+Gui.fMain.lblTitle.Zorder(1)
+Gui.fMain.lblTitle.Position(200,300)
+Gui.fMain.lblTitle.Enabled(True)
+Gui.fMain.lblTitle.Alignment(0)
+Gui.fMain.lblTitle.FontName("Segoe UI Semibold")
+Gui.fMain.lblTitle.FontSize(11)
+Gui.fMain.lblTitle.Backcolor(-2147483633)
+Gui.fMain.lblTitle.BackStyle(0)
+Gui.fMain.lblTitle.Parent("pnlshowpart")
+Gui.fMain.lblTitle.Tooltip("")
+Gui.fMain.lblTitle.ControlGroup(0)
+
+
+Gui.fMain.txtNotes.Create(textboxm)
+Gui.fMain.txtNotes.Visible(True)
+Gui.fMain.txtNotes.Size(2970,2070)
+Gui.fMain.txtNotes.Zorder(0)
+Gui.fMain.txtNotes.Position(195,2725)
+Gui.fMain.txtNotes.Enabled(True)
+Gui.fMain.txtNotes.Alignment(0)
+Gui.fMain.txtNotes.FontName("Arial")
+Gui.fMain.txtNotes.FontSize(7)
+Gui.fMain.txtNotes.Backcolor(16777215)
+Gui.fMain.txtNotes.BorderStyle(1)
+Gui.fMain.txtNotes.MaxLength(0)
+Gui.fMain.txtNotes.NumericOnly(0)
+Gui.fMain.txtNotes.TabStop(True)
+Gui.fMain.txtNotes.TabIndex(23)
+Gui.fMain.txtNotes.Text("")
+Gui.fMain.txtNotes.Tooltip("")
+Gui.fMain.txtNotes.ControlGroup(0)
+Gui.fMain.txtNotes.DefaultValue("")
+
+
+Gui.fMain.cmdSave.Create(button)
+Gui.fMain.cmdSave.Caption("Save")
+Gui.fMain.cmdSave.Visible(True)
+Gui.fMain.cmdSave.Size(1125,345)
+Gui.fMain.cmdSave.Zorder(0)
+Gui.fMain.cmdSave.Position(200,4935)
+Gui.fMain.cmdSave.Enabled(False)
+Gui.fMain.cmdSave.FontName("Arial")
+Gui.fMain.cmdSave.FontSize(7)
+Gui.fMain.cmdSave.TabStop(True)
+Gui.fMain.cmdSave.TabIndex(24)
+Gui.fMain.cmdSave.Tooltip("")
+Gui.fMain.cmdSave.ControlGroup(0)
+Gui.fMain.cmdSave.DefaultValue("")
+
+
+Gui.fMain.cmdPickJob.Create(button)
+Gui.fMain.cmdPickJob.Caption("^")
+Gui.fMain.cmdPickJob.Visible(True)
+Gui.fMain.cmdPickJob.Size(345,330)
+Gui.fMain.cmdPickJob.Zorder(0)
+Gui.fMain.cmdPickJob.Position(3420,300)
+Gui.fMain.cmdPickJob.Enabled(True)
+Gui.fMain.cmdPickJob.FontName("Arial")
+Gui.fMain.cmdPickJob.FontSize(7)
+Gui.fMain.cmdPickJob.Parent("pnlEnterPart")
+Gui.fMain.cmdPickJob.TabStop(True)
+Gui.fMain.cmdPickJob.TabIndex(34)
+Gui.fMain.cmdPickJob.Tooltip("")
+Gui.fMain.cmdPickJob.ControlGroup(0)
+Gui.fMain.cmdPickJob.DefaultValue("")
+
+
+gui.fMain..minx(0)
+gui.fMain..miny(0)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Variable.UDT.uJobs.Define("Job",String)
+Variable.UDT.uJobs.Define("Sfx",String)
+Variable.UDT.uJobs.Define("Seq",String)
+Variable.UDT.uJobs.Define("WC",String)
+Variable.uGlobal.uJobs.Declare("uJobs")
+Variable.Global.iJobEditing.Declare(Long,-1)
+Variable.Global.sUserNum.Declare(String)
+Variable.Global.bIsSuperuser.Declare(Boolean,False)
+Variable.UDT.uEntries.Define("Entry_ID",Long,Entry_ID)
+Variable.UDT.uEntries.Define("Job",String,Job)
+Variable.UDT.uEntries.Define("Suffix",String,Suffix)
+Variable.UDT.uEntries.Define("Sequence",String,Sequence)
+Variable.UDT.uEntries.Define("Workcenter",String,Workcenter)
+Variable.UDT.uEntries.Define("Employee",String,Employee)
+Variable.UDT.uEntries.Define("Category",String,Category)
+Variable.UDT.uEntries.Define("Description",String,Description)
+Variable.UDT.uEntries.Define("Quantity",Float,Quantity)
+Variable.UDT.uEntries.Define("Notes",String,Notes)
+Variable.UDT.uEntries.Define("Shift",String,Shift)
+Variable.UDT.uEntries.Define("Date_Entered",Date,Date_Entered)
+Variable.UDT.uEntries.Define("User_Entered",String,User_Entered)
+Variable.UDT.uEntries.Define("Date_Modified",Date,Date_Modified)
+Variable.UDT.uEntries.Define("User_Modified",String,User_Modified)
+Variable.UDT.uEntries.Define("FGStyle",Long)
+Variable.uGlobal.uEntries.Declare("uEntries")
+Variable.Global.iEntryEditing.Declare(Long,-1)
+Variable.Global.sCheckDirty.Declare(String,"")
+Variable.Global.sCodeVals.Declare(String)
+
+Variable.Global.sTxtCatSave.Declare(String)
+Variable.Global.sTxtHrsSave.Declare(String)
+Variable.Global.sTxtNotesSave.Declare(String)
+Variable.Global.sTxtShiftSave.Declare(String)
+Variable.Global.bCanSaveNew.Declare(Boolean,False)
+
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'Function.Intrinsic.Debug.InvokeDebugger
+f.ODBC.Connection!Conx.OpenConnection(v.Ambient.PDSN,v.Ambient.PUser,v.Ambient.PPass)
+
+Function.Intrinsic.Control.CallSub(loadpasseddata)
+Function.Intrinsic.Control.CallSub(initializeflexgrid)
+Function.Intrinsic.Control.CallSub(Initializeform)
+
+Gui.fMain..Show
+
+Program.Sub.Main.End
+
+' ===================================================================
+' Initialization and Loading
+' ===================================================================
+'
+' ScreenSU 2 - Finishes setting up the form
+Program.Sub.InitializeForm.Start
+
+v.Local.iGAB.Declare(Long)
+v.Local.sGABTokens.Declare(String)
+
+' Set up events
+Gui.fMain..Event(Unload,fMain_Unload)
+Gui.fMain.cmdPrev.Event(Click,cmdPrev_Click)
+Gui.fMain.cmdNext.Event(Click,cmdNext_Click)
+Gui.fMain.cmdPickCat.Event(Click,cmdPickCat_Click)
+Gui.fMain.cmdPickJob.Event(Click,cmdPickJob_Click)
+Gui.fMain.cmdSave.Event(Click,cmdSave_Click)
+
+Gui.fMain.txtSeqEdit.Event(LostFocus,txtSeqEdit_LostFocus)
+Gui.fMain.txtCat.Event(LostFocus,txtCat_LostFocus)
+Gui.fMain.txtHours.Event(LostFocus,txtHours_LostFocus)
+Gui.fMain.txtNotes.Event(LostFocus,txtNotes_LostFocus)
+Gui.fMain.txtShift.Event(LostFocus,txtShift_LostFocus)
+
+Gui.fMain.txtCat.Event(GotFocus,txtCat_GotFocus)
+Gui.fMain.txtHours.Event(GotFocus,txtHours_GotFocus)
+Gui.fMain.txtNotes.Event(GotFocus,txtNotes_GotFocus)
+Gui.fMain.txtShift.Event(GotFocus,txtShift_GotFocus)
+
+' Set colors and captions
+gui.fMain.pnlDivider.BackColor(11250603)
+gui.fMain.pnlEnterPart.BackColor(13406802)
+gui.fMain.pnlShowPart.BackColor(13406802)
+
+gui.fMain.lblTitle.ForeColor(16777215)
+gui.fMain.lblPartEdit.ForeColor(16777215)
+gui.fMain.lblSfxEdit.ForeColor(16777215)
+gui.fMain.lblSeqEdit.ForeColor(16777215)
+gui.fMain.lblDash.ForeColor(16777215)
+
+gui.fMain.lblTitle.BackColor(13406802)
+gui.fMain.lblPartEdit.BackColor(13406802)
+gui.fMain.lblSfxEdit.BackColor(13406802)
+gui.fMain.lblSeqEdit.BackColor(13406802)
+gui.fMain.lblDash.BackColor(13406802)
+
+gui.fMain.cmdPrev.BackColor(15263976)
+gui.fMain.cmdNext.BackColor(15263976)
+gui.fMain.cmdPickJob.BackColor(15263976)
+Gui.fMain.cmdPrev.Caption("<")
+Gui.fMain.cmdNext.Caption(">")
+
+' Find the GAB version. If it's .NET allow resize, else, don't.
+Function.Intrinsic.String.Left(v.Ambient.GABVersion,1,v.Local.iGAB)
+Function.Intrinsic.Control.If(v.Local.iGAB,>=,2)
+	gui.fMain.cmdPrev.Anchor(9)
+	gui.fMain.cmdNext.Anchor(9)
+	gui.fMain.cmdSave.Anchor(6)
+	gui.fMain.pnlDivider.Anchor(7)
+	gui.fMain.pnlEnterPart.Anchor(13)
+	gui.fMain.pnlShowPart.Anchor(13)
+	gui.fMain.txtNotes.Anchor(7)
+	gui.fMain.gsfgHistory.Anchor(15)
+Function.Intrinsic.Control.Else
+	gui.fMain.cmdPickJob.Position(3450,315)
+
+	Gui.fMain..Sizeable(False)
+Function.Intrinsic.Control.EndIf
+
+Function.Intrinsic.Control.If(v.uGlobal.uJobs.UBound,>,-1)
+	gui.fMain.pnlEnterPart.Visible(False)
+	gui.fMain.pnlShowPart.Visible(True)
+
+	Function.Intrinsic.Control.CallSub(setposition,"iIndex",0)
+
+Function.Intrinsic.Control.Else
+	gui.fMain.pnlEnterPart.Visible(True)
+	gui.fMain.pnlShowPart.Visible(False)
+Function.Intrinsic.Control.EndIf
+
+Function.Intrinsic.Control.If(v.uGlobal.uJobs.UBound,<=,0)
+	gui.fMain.cmdPrev.Visible(False)
+	gui.fMain.cmdNext.Visible(False)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.InitializeForm.End
+
+' Loads the passed parameters from the caller
+Program.Sub.LoadPassedData.Start
+
+v.Local.iBDFRows.Declare(Long)
+v.Local.sRow.Declare(String)
+v.Local.i.Declare(Long)
+v.Local.j.Declare(Long)
+V.Local.sRowContents.Declare(String)
+v.Local.sRowTokens.Declare(String)
+v.Local.sTemp.Declare(String)
+v.Local.sQuery.Declare(String)
+v.Local.sRet.Declare(String)
+v.Local.iRet.Declare(Long)
+
+v.uGlobal.uJobs.Redim(-1,-1)
+
+Function.Intrinsic.Control.If(v.Caller.Hook,=,15916)
+	' Hook 15916 (GUI, Multiple)
+	v.Global.bCanSaveNew.Set(True)
+
+	F.Intrinsic.BDF.Load("AUX001","AUX001")
+	Function.Intrinsic.BDF.ReadKey("AUX001",v.Global.sUserNum)
+	f.Intrinsic.String.Replace(v.Global.sUserNum,"Employee: ","",v.Global.sUserNum)
+
+	Function.Intrinsic.String.Concat("Select Top 1 GUI_SECURITY, SHIFT from EMPLOYEE_MSTR where EMPLOYEE='",v.Global.sUserNum,"'",v.Local.sQuery)
+	f.ODBC.Connection!Conx.ExecuteAndReturn(v.Local.sQuery,v.Local.sRet)
+	Function.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+	Function.Intrinsic.Control.If(v.Local.sRet.UBound,>,0)
+		v.Local.iRet.Set(v.Local.sRet(0))
+
+		Function.Intrinsic.Control.If(v.Local.iRet,=,1)
+			v.Global.bIsSuperuser.Set(True)
+		Function.Intrinsic.Control.EndIf
+
+		gui.fMain.txtShift.Text(v.Local.sRet(1))
+	Function.Intrinsic.Control.EndIf
+
+	F.Intrinsic.BDF.ReadRowCount("AUX001",V.Local.iBDFRows)
+	F.Intrinsic.Math.Sub(V.Local.iBDFRows,1,V.Local.iBDFRows)
+
+	F.Intrinsic.Control.For(V.Local.i,0,V.Local.iBDFRows,1)
+		' Read the row and split it into an array
+		F.Intrinsic.BDF.ReadRow("AUX001",V.Local.i,V.Local.sRowContents)
+		F.Intrinsic.String.Split(V.Local.sRowContents,"|~|",V.Local.sRowContents)
+
+		Function.Intrinsic.String.Split(v.Local.sRowContents(0),"-",v.Local.sRowTokens)
+		Function.Intrinsic.String.Concat(v.Local.sRow,v.Local.sRowTokens(0),"*!*",v.Local.sRowTokens(1),"*!*",v.Local.sRowContents(1),"*!*",v.Local.sRowContents(4),v.Local.sRow)
+
+		Function.Intrinsic.Control.If(v.Local.i,<,v.Local.iBDFRows)
+			Function.Intrinsic.String.Concat(v.Local.sRow,"!*!",v.Local.sRow)	
+		Function.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.Next(V.Local.i)
+
+	Function.Intrinsic.Variable.LoadUDTFromString(v.uGlobal.uJobs,"Job*!*Sfx*!*Seq*!*WC",v.Local.sRow,"!*!","*!*",False)
+
+Function.Intrinsic.Control.ElseIf(v.Caller.Hook,=,15870)
+	' Hook 15870 (GUI, Single)
+	' 009990 - Job
+	' 009991 - Sfx
+	' 009992 - Seq
+	' 009993 - User ID
+
+	v.Global.bCanSaveNew.Set(True)
+	v.Global.sUserNum.Set(v.Passed.009993)
+
+	Function.Intrinsic.String.Concat("Select Top 1 GUI_SECURITY, SHIFT from EMPLOYEE_MSTR where EMPLOYEE='",v.Global.sUserNum,"'",v.Local.sQuery)
+	f.ODBC.Connection!Conx.ExecuteAndReturn(v.Local.sQuery,v.Local.sRet)
+	Function.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+	Function.Intrinsic.Control.If(v.Local.sRet.UBound,>,0)
+		v.Local.iRet.Set(v.Local.sRet(0))
+
+		Function.Intrinsic.Control.If(v.Local.iRet,=,1)
+			v.Global.bIsSuperuser.Set(True)
+		Function.Intrinsic.Control.EndIf
+
+		gui.fMain.txtShift.Text(v.Local.sRet(1))
+	Function.Intrinsic.Control.EndIf
+
+	Function.Intrinsic.String.Concat(v.Passed.009990,"*!*",v.Passed.009991,"*!*",v.Passed.009992,"*!*",v.Passed.009996,v.Local.sRow)
+	Function.Intrinsic.Variable.LoadUDTFromString(v.uGlobal.uJobs,"Job*!*Sfx*!*Seq*!*WC",v.Local.sRow,"!*!","*!*",False)
+Function.Intrinsic.Control.Else
+	' Launched from menu or Editor
+	' Select Top 1 EMPLOYEE, GUI_SECURITY from EMPLOYEE_MSTR where PR_USER_ID='JWD_USER'
+	Function.Intrinsic.String.Concat("Select Top 1 EMPLOYEE, SHIFT from EMPLOYEE_MSTR where PR_USER_ID='",v.Caller.user,"'",v.Local.sQuery)
+	f.ODBC.Connection!Conx.ExecuteAndReturn(v.Local.sQuery,v.Local.sRet)
+	Function.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+	Function.Intrinsic.Control.If(v.Local.sRet.UBound,>,0)
+		v.Global.sUserNum.Set(v.Local.sRet(0))	
+		gui.fMain.txtShift.Text(v.Local.sRet(1))
+	Function.Intrinsic.Control.EndIf
+
+	v.Global.bIsSuperuser.Set(True)	
+
+Function.Intrinsic.Control.EndIf
+Program.Sub.LoadPassedData.End
+
+' Sets the Flexgrid Styles and widths
+Program.Sub.InitializeFlexgrid.Start
+' 0  - Job Char(20) not null,
+' 1  - Suffix Char(3),
+' 2  - Sequence Char(6) not null,
+' 3  - Workcenter Char(4) not null,
+' 4  - Employee Char(5) not null,
+' 5  - Category Char(4) not null,
+' 6  - Description Char(30),
+' 7  - Quantity Double not null,
+' 8  - Notes Longvarchar,
+' 9  - Shift Char(1) not null,
+' 10 - Date_Entered Datetime not null,
+' 11 - User_Entered Char(8),
+' 12 - Date_Modified Datetime,
+' 12 - User_Modified Char(8)
+' 13 - FGStyle
+' 14 - Edit Button
+' 15 - Delete Button
+
+F.Intrinsic.Control.SetErrorHandler("initialize_flexgrid_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.iCol.Declare(Long)
+v.Local.iHighlight.Declare(Long,15849143)
+v.Local.iNumCols.Declare(Long,18)
+
+Gui.fMain.gsfgHistory.Sorting(True)
+Gui.fMain.gsfgHistory.Cols(v.Local.iNumCols)
+Gui.fMain.gsfgHistory.Rows(2)
+
+f.Intrinsic.Math.Sub(v.Local.iNumCols,1,v.Local.iNumCols)
+
+' Style 1 is locked for header row
+F.Intrinsic.Control.For(V.Local.iCol,0,v.Local.iNumCols,1)
+	Gui.fMain.gsfgHistory.BuildStyle(1,V.Local.iCol,"Format","Alignment",2)
+	Gui.fMain.gsfgHistory.BuildStyle(1,V.Local.iCol,"Type","Locked",True)
+F.Intrinsic.Control.Next(V.Local.iCol)
+
+Gui.fMain.gsfgHistory.TextMatrix(0,0,"ID")
+Gui.fMain.gsfgHistory.TextMatrix(1,0,"Job")
+Gui.fMain.gsfgHistory.TextMatrix(2,0,"Sfx")
+Gui.fMain.gsfgHistory.TextMatrix(3,0,"Seq")
+Gui.fMain.gsfgHistory.TextMatrix(4,0,"WC")
+Gui.fMain.gsfgHistory.TextMatrix(5,0,"Employee")
+Gui.fMain.gsfgHistory.TextMatrix(6,0,"Cat.")
+Gui.fMain.gsfgHistory.TextMatrix(7,0,"Description")
+Gui.fMain.gsfgHistory.TextMatrix(8,0,"Qty")
+Gui.fMain.gsfgHistory.TextMatrix(9,0,"Notes")
+Gui.fMain.gsfgHistory.TextMatrix(10,0,"Shift")
+Gui.fMain.gsfgHistory.TextMatrix(11,0,"Date Entered")
+Gui.fMain.gsfgHistory.TextMatrix(12,0,"User Entered")
+Gui.fMain.gsfgHistory.TextMatrix(13,0,"Date Modified")
+Gui.fMain.gsfgHistory.TextMatrix(14,0,"User Modified")
+Gui.fMain.gsfgHistory.TextMatrix(15,0,"App Style")
+Gui.fMain.gsfgHistory.TextMatrix(16,0,"")
+Gui.fMain.gsfgHistory.TextMatrix(17,0,"")
+
+' Style 2 is Restricted Access (3 column), Normal
+F.Intrinsic.Control.For(V.Local.iCol,0,v.Local.iNumCols,1)
+	Gui.fMain.gsfgHistory.BuildStyle(2,V.Local.iCol,"Format","Alignment",2)
+	Gui.fMain.gsfgHistory.BuildStyle(2,V.Local.iCol,"Type","Locked",True)
+	Gui.fMain.gsfgHistory.BuildStyle(2,v.Local.iCol,"Color","Back",v.Color.White)
+F.Intrinsic.Control.Next(V.Local.iCol)
+
+' Style 4 is Full Access (5 column), Editing Row
+f.Intrinsic.Math.sub(v.Local.iNumCols,2,v.Local.iNumCols)
+F.Intrinsic.Control.For(V.Local.iCol,0,v.Local.iNumCols,1)
+	Gui.fMain.gsfgHistory.BuildStyle(4,V.Local.iCol,"Format","Alignment",2)
+	Gui.fMain.gsfgHistory.BuildStyle(4,V.Local.iCol,"Type","Locked",True)
+	Gui.fMain.gsfgHistory.BuildStyle(4,v.Local.iCol,"Color","Back",V.Local.iHighlight)
+F.Intrinsic.Control.Next(V.Local.iCol)
+
+Gui.fMain.gsfgHistory.BuildStyle(4,16,"Type","Command","Cancel")
+Gui.fMain.gsfgHistory.BuildStyle(4,16,"Format","Alignment",4)
+Gui.fMain.gsfgHistory.BuildStyle(4,17,"Type","Command","Delete")
+Gui.fMain.gsfgHistory.BuildStyle(4,17,"Format","Alignment",4)
+
+' Style 3 is Full Access (5 column), Normal
+F.Intrinsic.Control.For(V.Local.iCol,0,v.Local.iNumCols,1)
+	Gui.fMain.gsfgHistory.BuildStyle(3,V.Local.iCol,"Format","Alignment",2)
+	Gui.fMain.gsfgHistory.BuildStyle(3,V.Local.iCol,"Type","Locked",True)
+	Gui.fMain.gsfgHistory.BuildStyle(3,v.Local.iCol,"Color","Back",v.Color.White)
+F.Intrinsic.Control.Next(V.Local.iCol)
+
+Gui.fMain.gsfgHistory.BuildStyle(3,16,"Type","Command","Edit")
+Gui.fMain.gsfgHistory.BuildStyle(3,16,"Format","Alignment",4)
+Gui.fMain.gsfgHistory.BuildStyle(3,17,"Type","Command","Delete")
+Gui.fMain.gsfgHistory.BuildStyle(3,17,"Format","Alignment",4)
+
+Gui.fMain.gsfgHistory.FixedRows(1)
+
+Function.Intrinsic.Control.If(v.Global.bIsSuperuser,=,True)
+	Gui.fMain.gsfgHistory.SetColumnPercentages(".00:.00:.00:.00:.00:.00:.13:.35:.2:.00:.08:.00:.00:.00:.00:.00:.12:.12")
+Function.Intrinsic.Control.Else
+	Gui.fMain.gsfgHistory.SetColumnPercentages(".00:.00:.00:.00:.00:.00:.15:.55:.2:.00:.1:.00:.00:.00:.00:.00:.00:.00")
+Function.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("initialize_flexgrid_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_DT_Entries.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.InitializeFlexgrid.End
+
+' ===================================================================
+' UI Handlers
+' ===================================================================
+'
+' Sets the job to the previous one
+Program.Sub.cmdPrev_Click.Start
+
+v.Local.iChange.Declare(Long)
+v.Local.iRet.Declare(Long)
+
+Function.Intrinsic.Control.If(v.Screen.fMain!cmdSave.Enabled,=,True)
+	Function.Intrinsic.UI.Msgbox("Would you like to save your changes?","Save Changes",4,v.Local.iRet)
+	Function.Intrinsic.Control.If(v.Local.iRet,=,6)
+		Function.Intrinsic.Control.CallSub(saveentry)
+	Function.Intrinsic.Control.EndIf
+Function.Intrinsic.Control.EndIf
+
+f.Intrinsic.Math.Sub(v.Global.iJobEditing,1,v.Local.iChange)
+Function.Intrinsic.Control.If(v.Local.iChange,>=,0)
+	Function.Intrinsic.Control.CallSub(setposition,"iIndex",v.Local.iChange)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmdPrev_Click.End
+
+' Sets the job to the next one
+Program.Sub.cmdNext_Click.Start
+' Save the current thing
+
+v.Local.iChange.Declare(Long)
+v.Local.iRet.Declare(Long)
+
+Function.Intrinsic.Control.If(v.Screen.fMain!cmdSave.Enabled,=,True)
+	Function.Intrinsic.UI.Msgbox("Would you like to save your changes?","Save Changes",4,v.Local.iRet)
+	Function.Intrinsic.Control.If(v.Local.iRet,=,6)
+		Function.Intrinsic.Control.CallSub(saveentry)
+	Function.Intrinsic.Control.EndIf
+Function.Intrinsic.Control.EndIf
+
+f.Intrinsic.Math.Add(v.Global.iJobEditing,1,v.Local.iChange)
+Function.Intrinsic.Control.If(v.Local.iChange,<=,v.uGlobal.uJobs.UBound)
+	Function.Intrinsic.Control.CallSub(setposition,"iIndex",v.Local.iChange)
+Function.Intrinsic.Control.Else
+
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmdNext_Click.End
+
+' Allows the user to pick the job via a browser
+Program.Sub.cmdPickJob_Click.Start
+
+v.Local.sTitles.Declare(String)
+Variable.Local.iWidths.Declare(long)
+v.Local.sRet.Declare(String)
+
+Function.Intrinsic.String.Split("1000*!*600*!*800*!*800*!*3500","*!*",variable.local.iWidths)
+Function.Intrinsic.String.Split("Job*!*Sfx*!*Seq*!*WC/WG*!*Description","*!*",variable.local.sTitles)
+
+Function.Intrinsic.UI.Browser("Select a Job","Conx","SELECT Distinct Job, Sfx, Seq, SeqRes, Descr from APSV3_JBLines where SeqType = 1 order by Job, Sfx, Seq;",Variable.Local.sTitles,Variable.Local.iWidths,Variable.Local.sRet)
+
+Function.Intrinsic.Control.If(Variable.Local.sRet,<>,"***CANCEL***")
+
+	Function.Intrinsic.String.Split(Variable.Local.sRet,"*!*",Variable.Local.sRet)
+	Function.Intrinsic.String.Trim(v.Local.sRet(1),v.Local.sRet(1))
+	gui.fMain.txtJobEdit.Text(v.Local.sRet(0))
+	gui.fMain.txtSfxEdit.Text(v.Local.sRet(1))
+	gui.fMain.txtSeqEdit.Text(v.Local.sRet(2))
+
+	Function.Intrinsic.Control.CallSub(loadnewjob)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmdPickJob_Click.End
+
+' Loads a job when the user exits the Seq field
+Program.Sub.txtSeqEdit_LostFocus.Start
+
+Function.Intrinsic.Control.CallSub(loadnewjob)
+
+Program.Sub.txtSeqEdit_LostFocus.End
+
+' Allows the user to pick a category via a Browser
+Program.Sub.cmdPickCat_Click.Start
+
+v.Local.sTitles.Declare(String)
+Variable.Local.iWidths.Declare(long)
+v.Local.sRet.Declare(String)
+
+Function.Intrinsic.String.Split("600*!*600*!*3000","*!*",variable.local.iWidths)
+Function.Intrinsic.String.Split("ID*!*Category*!*Description","*!*",variable.local.sTitles)
+
+Function.Intrinsic.UI.Browser("Select a Category","Conx","Select Code_ID, Category, Description From ATG_3627_DT_Codes",Variable.Local.sTitles,Variable.Local.iWidths,Variable.Local.sRet)
+
+Function.Intrinsic.Control.If(Variable.Local.sRet,<>,"***CANCEL***")
+	v.Global.sCodeVals.Set(v.Local.sRet)
+
+	Function.Intrinsic.String.Split(Variable.Local.sRet,"*!*",Variable.Local.sRet)
+	Function.Intrinsic.String.Trim(v.Local.sRet(1),v.Local.sRet(1))
+	gui.fMain.txtCat.Text(v.Local.sRet(1))
+
+	Function.Intrinsic.Control.CallSub(checkdirty)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmdPickCat_Click.End
+
+' Saves the current line
+Program.Sub.cmdSave_Click.Start
+
+Function.Intrinsic.Control.CallSub(saveentry)
+
+Program.Sub.cmdSave_Click.End
+
+' Edits or Deletes the clicked line
+Program.Sub.gsfgHistory_commandclick.Start
+
+v.Local.i.Declare(Long)
+V.Local.iRow.Declare(Long)
+V.Local.iCol.Declare(Long)
+v.Local.sRow.Declare(String)
+v.Local.iRet.Declare(Long)
+v.Local.sQuery.Declare(String)
+v.Local.iRet2.Declare(Long)
+v.Local.iTemp.Declare(Long)
+
+V.Local.iRow.Set(V.Args.Key)
+V.Local.iCol.Set(V.Args.Column)
+
+gui.fMain.gsfgHistory.ReadRow(v.Local.iRow,v.Local.sRow)
+Function.Intrinsic.String.Split(v.Local.sRow,"*!*",v.Local.sRow)
+	
+Function.Intrinsic.Control.If(v.Local.iCol,=,16)
+
+	v.Local.iTemp.Set(v.Local.sRow(0))
+	Function.Intrinsic.Control.If(v.Global.iEntryEditing,=,v.Local.iTemp)
+		v.Global.iEntryEditing.Set(-1)
+		gui.fMain.txtCat.Text("")
+		gui.fMain.txtHours.Text("")
+		gui.fMain.txtNotes.Text("")
+			
+		Function.Intrinsic.String.Concat("*!*",v.Screen.fMain!txtShift.Text,"*!**!*",v.Global.sCheckDirty)
+		v.Global.sCodeVals.Set("")
+			
+		gui.fMain.gsfgHistory.Visible(False)
+		f.Intrinsic.Control.For(v.Local.i,1,v.Screen.fMain!gsfgHistory.Rows,1)
+			gui.fMain.gsfgHistory.ApplyStyle(v.Local.i,3)
+		f.Intrinsic.Control.Next(v.Local.i)
+		gui.fMain.gsfgHistory.Visible(True)
+	
+		Function.Intrinsic.Control.CallSub(checkdirty)
+	Function.Intrinsic.Control.Else
+		Function.Intrinsic.Control.If(v.Screen.fMain!cmdSave.Enabled,=,True)
+			Function.Intrinsic.UI.Msgbox("Would you like to save your changes?","Save Changes",4,v.Local.iRet2)
+			Function.Intrinsic.Control.If(v.Local.iRet2,=,6)
+				Function.Intrinsic.Control.CallSub(saveentry)
+			Function.Intrinsic.Control.EndIf
+		Function.Intrinsic.Control.EndIf
+	
+		' Edit
+		v.Global.iEntryEditing.Set(v.Local.sRow(0))
+		gui.fMain.txtCat.Text(v.Local.sRow(6))
+		gui.fMain.txtHours.Text(v.Local.sRow(8))
+		gui.fMain.txtNotes.Text(v.Local.sRow(9))
+		gui.fMain.txtShift.Text(v.Local.sRow(10))
+	
+		Function.Intrinsic.String.Concat(v.Local.sRow(6),"*!*",v.Local.sRow(10),"*!*",v.Local.sRow(8),"*!*",v.Local.sRow(9),v.Global.sCheckDirty)
+		Function.Intrinsic.String.Concat("*!*",v.Local.sRow(6),"*!*",v.Local.sRow(7),v.Global.sCodeVals)
+	
+		gui.fMain.gsfgHistory.Visible(False)
+		f.Intrinsic.Control.For(v.Local.i,1,v.Screen.fMain!gsfgHistory.Rows,1)
+			gui.fMain.gsfgHistory.ApplyStyle(v.Local.i,3)
+		f.Intrinsic.Control.Next(v.Local.i)
+	
+		gui.fMain.gsfgHistory.ApplyStyle(v.Local.iRow,4)
+		gui.fMain.gsfgHistory.Visible(True)
+	Function.Intrinsic.Control.EndIf
+Function.Intrinsic.Control.Else
+	' Delete
+	Function.Intrinsic.UI.Msgbox("Are you sure you want to delete this entry?","Delete entry",4,v.Local.iRet)
+	Function.Intrinsic.Control.If(v.Local.iRet,=,6)
+		Function.Intrinsic.String.Concat("Delete from ATG_3627_DT_Entries where Entry_ID=",v.Local.sRow(0),v.Local.sQuery)
+		f.ODBC.Connection!Conx.Execute(v.Local.sQuery)
+
+		Function.Intrinsic.Control.CallSub(setposition,"iIndex",v.Global.iJobEditing)
+	Function.Intrinsic.Control.EndIf
+Function.Intrinsic.Control.EndIf
+
+Function.Intrinsic.Control.CallSub(checkdirty)
+
+Program.Sub.gsfgHistory_commandclick.End
+
+' Exits the program on close
+Program.Sub.fMain_Unload.Start
+
+v.Local.iRet.Declare(Long)
+
+Function.Intrinsic.Control.If(v.Screen.fMain!cmdSave.Enabled,=,True)
+	Function.Intrinsic.UI.Msgbox("Would you like to save your changes before quitting?","Save Changes",4,v.Local.iRet)
+	Function.Intrinsic.Control.If(v.Local.iRet,=,6)
+		Function.Intrinsic.Control.CallSub(saveentry)
+	Function.Intrinsic.Control.EndIf
+Function.Intrinsic.Control.EndIf
+
+Function.Intrinsic.Control.End
+
+Program.Sub.fMain_Unload.End
+
+' The following functions save the field value when the user enters the field. Used to determine dirty status.
+Program.Sub.txtShift_GotFocus.Start
+Function.Intrinsic.String.Trim(v.Screen.fMain!txtShift.Text,v.Global.sTxtShiftSave)
+Program.Sub.txtShift_GotFocus.End
+
+Program.Sub.txtHours_GotFocus.Start
+Function.Intrinsic.String.Trim(v.Screen.fMain!txtHours.Text,v.Global.sTxtHrsSave)
+Program.Sub.txtHours_GotFocus.End
+
+Program.Sub.txtCat_GotFocus.Start
+Function.Intrinsic.String.Trim(v.Screen.fMain!txtCat.Text,v.Global.sTxtCatSave)
+Program.Sub.txtCat_GotFocus.End
+
+Program.Sub.txtNotes_GotFocus.Start
+Function.Intrinsic.String.Trim(v.Screen.fMain!txtNotes.Text,v.Global.sTxtNotesSave)
+Program.Sub.txtNotes_GotFocus.End
+
+' The following functions check to see if the field was changed, and set the UI if it did.
+Program.Sub.txtNotes_LostFocus.Start
+v.Local.sCompare.Declare(String)
+
+Function.Intrinsic.String.Trim(v.Screen.fMain!txtNotes.Text,v.Local.sCompare)
+Function.Intrinsic.Control.If(v.Local.sCompare,<>,v.Global.sTxtNotesSave)
+	
+	Function.Intrinsic.Control.CallSub(checkdirty)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.txtNotes_LostFocus.End
+
+Program.Sub.txtShift_LostFocus.Start
+
+v.Local.sChar.Declare(String)
+v.Local.iLen.Declare(Long)
+v.Local.sCompare.Declare(String)
+
+Function.Intrinsic.String.Trim(v.Screen.fMain!txtShift.Text,v.Local.sCompare)
+Function.Intrinsic.Control.If(v.Local.sCompare,<>,v.Global.sTxtShiftSave)
+	
+	v.Local.sChar.Set(v.Screen.fMain!txtShift.Text)
+	v.Local.iLen.Set(v.Local.sChar.Length)
+
+	Function.Intrinsic.Control.If(v.Local.iLen,>,1)
+		Function.Intrinsic.String.Left(v.Local.sChar,1,v.Local.sChar)
+		gui.fMain.txtShift.Text(v.Local.sChar)
+	Function.Intrinsic.Control.EndIf
+
+	Function.Intrinsic.Control.CallSub(checkdirty)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.txtShift_LostFocus.End
+
+Program.Sub.txtCat_LostFocus.Start
+
+v.Local.sCat.Declare(String)
+v.Local.sRet.Declare(String)
+v.Local.sQuery.Declare(String)
+v.Local.sCompare.Declare(String)
+
+v.Local.sCompare.Set(v.Screen.fMain!txtCat.Text)
+Function.Intrinsic.String.Trim(v.Local.sCompare,v.Local.sCompare)
+Function.Intrinsic.Control.If(v.Local.sCompare,<>,v.Global.sTxtCatSave)
+	
+	v.Local.sCat.Set(v.Screen.fMain!txtCat.Text)
+	Function.Intrinsic.String.UCase(v.Local.sCat,v.Local.sCat)
+
+	Function.Intrinsic.String.Concat("Select Top 1 * from ATG_3627_DT_Codes where Category='",v.Local.sCat,"'",v.Local.sQuery)
+	f.ODBC.Connection!Conx.ExecuteAndReturn(v.Local.sQuery,v.Local.sRet)
+
+	v.Global.sCodeVals.Set(v.Local.sRet)
+
+	Function.Intrinsic.Control.If(v.Local.sRet,<>,"")
+		gui.fMain.txtCat.Text(v.Local.sCat)
+	Function.Intrinsic.Control.Else
+		gui.fMain.txtCat.Text("")
+	Function.Intrinsic.Control.EndIf
+
+	Function.Intrinsic.Control.CallSub(checkdirty)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.txtCat_LostFocus.End
+
+Program.Sub.txtHours_LostFocus.Start
+
+v.Local.bRet.Declare(Boolean)
+v.Local.sFloat.Declare(String)
+v.Local.sCompare.Declare(String)
+
+Function.Intrinsic.String.Trim(v.Screen.fMain!txtCat.Text,v.Local.sCompare)
+Function.Intrinsic.Control.If(v.Local.sCompare,<>,v.Global.sTxtCatSave)
+	
+	Function.Intrinsic.Math.IsNumeric(v.Screen.fMain!txtHours.Text,v.Local.bRet)
+	Function.Intrinsic.Control.If(v.Local.bRet)
+		Function.Intrinsic.String.Format(v.Screen.fMain!txtHours.Text,"#########################.##", v.Local.sFloat)
+		gui.fMain.txtHours.Text(v.Local.sFloat)
+	Function.Intrinsic.Control.Else
+		gui.fMain.txtHours.Text("")
+	Function.Intrinsic.Control.EndIf
+
+	Function.Intrinsic.Control.CallSub(checkdirty)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.txtHours_LostFocus.End
+
+' ===================================================================
+' Other Functions 
+' ===================================================================
+'
+' Sets the job UDT position for the current display
+Program.Sub.SetPosition.Start
+
+
+
+	v.Local.sRet.Declare(String)
+	v.Local.sTitle.Declare(String)
+	v.Local.sQuery.Declare(String)
+	v.Local.iStyle.Declare(Long,2)
+	v.Local.sJob.Declare(String)
+	v.Local.sSfx.Declare(String)
+	v.Local.sSeq.Declare(String)
+	
+	v.Global.iJobEditing.Set(v.Args.iIndex)
+
+	F.Intrinsic.Variable.UDTPositionToString(v.uGlobal.uJobs,"Job*!*Sfx*!*Seq",v.Args.iIndex,"*!*",v.Local.sRet)
+	Function.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+
+	v.Local.sJob.Set(v.Local.sRet(0))
+
+	v.Local.sSfx.Set(v.Local.sRet(1))
+	Function.Intrinsic.String.Trim(v.Local.sSfx,v.Local.sSfx)
+	Function.Intrinsic.Control.If(v.Local.sSfx.Length,>,0)
+		Function.Intrinsic.String.LPad(v.Local.sSfx,"0",3,v.Local.sSfx)
+	Function.Intrinsic.Control.EndIf
+
+	v.Local.sSeq.Set(v.Local.sRet(2))
+	Function.Intrinsic.String.Trim(v.Local.sSeq,v.Local.sSeq)
+	Function.Intrinsic.String.LPad(v.Local.sSeq,"0",6,v.Local.sSeq)
+
+
+	v.Local.sTitle.Set(v.Local.sJob)
+
+	Function.Intrinsic.Control.If(v.Local.sSfx.Length,>,0)
+		Function.Intrinsic.String.Concat(v.Local.sTitle,"-",v.Local.sSfx,v.Local.sTitle)
+	Function.Intrinsic.Control.EndIf
+
+	Function.Intrinsic.String.Concat(v.Local.sTitle,", Seq. ",v.Local.sSeq,v.Local.sTitle)
+	gui.fMain.lblTitle.Caption(v.Local.sTitle)
+
+	gui.fMain.cmdPrev.Enabled(True)
+	gui.fMain.cmdNext.Enabled(True)
+
+	Function.Intrinsic.Control.If(v.Global.iJobEditing,=,0)
+		gui.fMain.cmdPrev.Enabled(False)
+	Function.Intrinsic.Control.EndIf
+	Function.Intrinsic.Control.If(v.Global.iJobEditing,=,v.uGlobal.uJobs.UBound)
+		gui.fMain.cmdNext.Enabled(False)
+	Function.Intrinsic.Control.EndIf
+
+	' Set up grid history
+	Function.Intrinsic.Control.If(v.Global.bIsSuperuser,=,True)
+		v.Local.iStyle.Set(3)
+	Function.Intrinsic.Control.EndIf
+
+	v.uGlobal.uEntries.Redim(-1,-1)
+	v.Global.iEntryEditing.Set(-1)
+	gui.fMain.gsfgHistory.Rows(1)
+
+	' Open a recordset of this key
+	Function.Intrinsic.String.Concat("Select * from ATG_3627_DT_Entries where Lower(Job)='",v.Local.sJob,"' and Lower(Suffix)='",v.Local.sSfx,"' and Lower(Sequence)='",v.Local.sSeq,"' order by Date_Entered Asc;",v.Local.sQuery)
+	f.ODBC.Connection!Conx.OpenRecordsetRW("rstHistory",v.Local.sQuery)
+
+	F.Intrinsic.Control.If(V.ODBC.conX!rstHistory.EOF,=,False)
+		' Load recordset into the UDT
+		Function.Intrinsic.Variable.LoadUDTFromRecordset("Conx","rstHistory","v.uGlobal.uEntries",False)
+		' Apply style
+		F.Intrinsic.Variable.UDTSetMemberValue(V.uGlobal.uEntries!FGStyle,v.Local.iStyle)
+		' Load the UDT into the Flexgrid	
+		gui.fMain.gsfgHistory.Visible(False)
+		gui.fMain.gsfgHistory.LoadFromUDT("v.uGlobal.uEntries","Entry_ID*!*Job*!*Suffix*!*Sequence*!*Workcenter*!*Employee*!*Category*!*Description*!*Quantity*!*Notes*!*Shift*!*Date_Entered*!*User_Entered*!*Date_Modified*!*User_Modified",v.Local.iStyle)
+		gui.fMain.gsfgHistory.Visible(True)
+	Function.Intrinsic.Control.EndIf
+
+	f.ODBC.Conx!rstHistory.Close
+
+	v.Global.sCodeVals.Set("")
+	gui.fMain.txtCat.Text("")
+	gui.fMain.txtHours.Text("")
+	gui.fMain.txtNotes.Text("")
+
+	Function.Intrinsic.String.Concat("*!*",v.Screen.fMain!txtShift.Text,"*!**!*",v.Global.sCheckDirty)
+	Function.Intrinsic.Control.CallSub(checkdirty)
+
+Program.Sub.SetPosition.End
+
+' Sets the UI controls based on currently entered data
+Program.Sub.CheckDirty.Start
+
+v.Local.sCur.Declare(String)
+v.Local.bRet.Declare(Boolean)
+v.Local.bEnabled.Declare(Boolean,False)
+
+Function.Intrinsic.String.Concat(v.Screen.fMain!txtCat.Text,"*!*",v.Screen.fMain!txtShift.Text,"*!*",v.Screen.fMain!txtHours.Text,"*!*",v.Screen.fMain!txtNotes.Text,v.Local.sCur)
+Function.Intrinsic.Control.If(v.Local.sCur,<>,v.Global.sCheckDirty)
+	v.Local.bEnabled.set(True)
+
+	Function.Intrinsic.Control.If(v.Global.sCodeVals,<>,"")
+		gui.fMain.lblCatTitle.ForeColor(0)
+	Function.Intrinsic.Control.Else
+		gui.fMain.lblCatTitle.ForeColor(4876759)
+		v.Local.bEnabled.set(False)
+	Function.Intrinsic.Control.EndIf
+
+	Function.Intrinsic.Math.IsNumeric(v.Screen.fMain!txtHours.Text,v.Local.bRet)
+	Function.Intrinsic.Control.If(v.Local.bRet,=,True)
+		gui.fMain.lblHours.ForeColor(0)
+	Function.Intrinsic.Control.Else
+		gui.fMain.lblHours.ForeColor(4876759)
+		v.Local.bEnabled.set(False)
+	Function.Intrinsic.Control.EndIf
+
+Function.Intrinsic.Control.EndIf
+
+Function.Intrinsic.Control.If(v.Global.bCanSaveNew,=,False)
+	Function.Intrinsic.Control.If(v.Global.iEntryEditing,=,-1)
+		gui.fMain.txtCat.Enabled(False)
+		gui.fMain.cmdPickCat.Enabled(False)
+		gui.fMain.txtHours.Enabled(False)
+		gui.fMain.txtNotes.Enabled(False)
+		gui.fMain.txtShift.Enabled(False)
+		gui.fMain.lblCatTitle.ForeColor(0)
+		gui.fMain.lblHours.ForeColor(0)
+		v.Local.bEnabled.Set(False)
+	Function.Intrinsic.Control.Else
+		gui.fMain.txtCat.Enabled(True)
+		gui.fMain.cmdPickCat.Enabled(True)
+		gui.fMain.txtHours.Enabled(True)
+		gui.fMain.txtNotes.Enabled(True)
+		gui.fMain.txtShift.Enabled(True)
+	Function.Intrinsic.Control.EndIf
+Function.Intrinsic.Control.EndIf
+
+gui.fMain.cmdSave.Enabled(v.Local.bEnabled)
+
+Program.Sub.CheckDirty.End
+
+' Loads a new job from the picker or header text boxes 
+Program.Sub.LoadNewJob.Start
+' See if the job has any entries
+
+v.Local.sRet.Declare(String)
+v.Local.sCompare.Declare(String)
+v.Local.sJob.Declare(String)
+v.Local.sSfx.Declare(String)
+v.Local.sSeq.Declare(String)
+
+v.Local.sJob.Set(v.Screen.fMain!txtJobEdit.Text)
+Function.Intrinsic.String.Trim(v.Local.sJob,v.Local.sJob)
+Function.Intrinsic.String.LCase(v.Local.sJob,v.Local.sJob)
+
+v.Local.sSfx.Set(v.Screen.fMain!txtSfxEdit.Text)
+Function.Intrinsic.String.Trim(v.Local.sSfx,v.Local.sSfx)
+Function.Intrinsic.String.LCase(v.Local.sSfx,v.Local.sSfx)
+Function.Intrinsic.Control.If(v.Local.sSfx,<>,"")
+	Function.Intrinsic.String.LPad(v.Local.sSfx,"0",3,v.Local.sSfx)
+Function.Intrinsic.Control.EndIf
+gui.fMain.txtSfxEdit.Text(v.Local.sSfx)
+
+v.Local.sSeq.Set(v.Screen.fMain!txtSeqEdit.Text)
+Function.Intrinsic.String.Trim(v.Local.sSeq,v.Local.sSeq)
+Function.Intrinsic.String.LCase(v.Local.sSeq,v.Local.sSeq)
+Function.Intrinsic.String.LPad(v.Local.sSeq,"0",6,v.Local.sSeq)
+gui.fMain.txtSeqEdit.Text(v.Local.sSeq)
+
+Function.Intrinsic.String.Concat(v.Local.sJob,"*!*",v.Local.sSfx,"*!*",v.Local.sSeq,v.Local.sCompare)
+F.Intrinsic.Variable.UDTPositionToString(v.uGlobal.uJobs,"Job*!*Sfx*!*Seq",v.Global.iJobEditing,"*!*",v.Local.sRet)
+
+Function.Intrinsic.Control.If(v.Local.sCompare,<>,v.Local.sRet)
+	v.uGlobal.uJobs.Redim(-1,-1)
+	Function.Intrinsic.Variable.LoadUDTFromString(v.uGlobal.uJobs,"Job*!*Sfx*!*Seq",v.Local.sCompare,"!*!","*!*",False)
+	Function.Intrinsic.Control.CallSub(setposition,"iIndex",0)
+	Function.Intrinsic.Control.EndIf
+Program.Sub.LoadNewJob.End
+
+' Saves the currently editing entry
+Program.Sub.SaveEntry.Start
+
+v.Local.sQuery.Declare(String)
+v.Local.sJob.Declare(String)
+v.Local.sSfx.Declare(String)
+v.Local.sSeq.Declare(String)
+v.Local.sWC.Declare(String)
+v.Local.sRet.Declare(String)
+v.Local.sCode.Declare(String)
+v.Local.sDesc.Declare(String)
+v.Local.sQty.Declare(String)
+v.local.bRet.Declare(Boolean)
+v.Local.sShift.Declare(String)
+v.Local.sNotes.Declare(String)
+v.Local.sDate.Declare(String)
+
+gui.fMain.cmdSave.Enabled(False)
+
+Function.Intrinsic.Control.If(v.Global.iJobEditing,=,-1)
+	Function.Intrinsic.Control.ExitSub
+Function.Intrinsic.Control.EndIf
+
+
+
+F.Intrinsic.Variable.UDTPositionToString(v.uGlobal.uJobs,"Job*!*Sfx*!*Seq*!*WC",v.Global.iJobEditing,"*!*",v.Local.sRet)
+Function.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+v.Local.sJob.Set(v.Local.sRet(0))
+v.Local.sSfx.Set(v.Local.sRet(1))
+v.Local.sSeq.Set(v.Local.sRet(2))
+v.Local.sWC.Set(v.Local.sRet(3))
+
+' Code
+v.Local.sCode.Set(v.Screen.fMain!txtCat.Text)
+Function.Intrinsic.String.UCase(v.Local.sCode,v.Local.sCode)
+Function.Intrinsic.String.RPad(v.Local.sCode," ",4,v.Local.sCode)
+
+' Desc
+Function.Intrinsic.String.Split(v.Global.sCodeVals,"*!*",v.Local.sDesc)
+v.Local.sDesc.Set(v.Local.sDesc(2))
+f.Intrinsic.String.Replace(v.Local.sDesc,"'","''",v.Local.sDesc)
+
+' Qty
+Function.Intrinsic.Math.IsNumeric(v.Screen.fMain!txtHours.Text,v.local.bRet)
+Function.Intrinsic.Control.If(v.Local.bRet,=,True)
+	v.Local.sQty.Set(v.Screen.fMain!txtHours.Text)
+Function.Intrinsic.Control.EndIf
+
+' Notes
+v.Local.sNotes.Set(v.Screen.fMain!txtNotes.Text)
+f.Intrinsic.String.Replace(v.Local.sNotes,"'","''",v.Local.sNotes)
+
+' Shift
+v.Local.sShift.Set(v.Screen.fMain!txtShift.Text)
+Function.Intrinsic.String.Trim(v.Local.sShift,v.Local.sShift)
+Function.Intrinsic.String.StripCharacters(v.Local.sShift,v.Local.sShift)
+Function.Intrinsic.String.Left(v.Local.sShift,1,v.Local.sShift)
+
+'Date
+f.Intrinsic.String.Format(v.Ambient.Now,"yyyy-M-D h:Nn:Ss",v.Local.sDate)
+
+Function.Intrinsic.Control.If(v.Global.iEntryEditing,=,-1)
+	' New row
+	' Insert into ATG_3627_DT_Entries values(0,'JOB','SFX','SEQ','WC','EMPLOYEEID','CODE','CODE_DESC',QTY,'NOTES','SHIFT','DATENOW','EMPLOYEEID',null,null);
+	Function.Intrinsic.String.Concat("Insert into ATG_3627_DT_Entries values(0,'",v.Local.sJob,"','",v.Local.sSfx,"','",v.Local.sSeq,"','",v.Local.sWC,"','",v.Global.sUserNum,"','",v.Local.sCode,"','",v.Local.sDesc,"',",v.Local.sQty,",'",v.Local.sNotes,"','",v.Local.sShift,"','",v.Local.sDate,"','",v.Global.sUserNum,"',null,null);",v.Local.sQuery)
+	f.ODBC.Connection!Conx.Execute(v.Local.sQuery)
+Function.Intrinsic.Control.Else
+	Function.Intrinsic.String.Concat("Update ATG_3627_DT_Entries set Category='",v.Local.sCode,"', Description='",v.Local.sDesc,"', Quantity=",v.Local.sQty,", Notes='",v.Local.sNotes,"', Shift='",v.Local.sShift,"', Date_Modified='",v.Local.sDate,"', User_Modified='",v.Global.sUserNum,"' where Entry_ID=",v.Global.iEntryEditing,v.Local.sQuery)
+	f.ODBC.Connection!Conx.Execute(v.Local.sQuery)
+Function.Intrinsic.Control.EndIf
+
+Function.Intrinsic.Control.CallSub(setposition,"iIndex",v.Global.iJobEditing)
+Program.Sub.SaveEntry.End
+
+Program.Sub.Comments.Start
+${$0$}$ATG_Downtime$}$JWD$}$2/17/2016$}$False
+${$3$}$0$}$$}$-1$}$-1$}$$}$1/1/1900$}$A beginning is the time for taking the most delicate care that the balances are correct. This every sister of the Bene Gesserit knows. To begin your study of the life of Muad'Dib, then, take care that you first place him in his time: born in the 57th year of the Padishah Emperor, Shaddam IV. And take the most special care that you locate Muad'Dib in his place: the planet Arrakis. Do not be deceived by the fact that he was born on Caladan and lived his first fifteen years there. Arrakis, the planet known as Dune, is forever his place.
+Program.Sub.Comments.End 
